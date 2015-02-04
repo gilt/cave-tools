@@ -22,7 +22,7 @@ function usage {
       echo ""
 }
 
-ALERT_PERIOD=5
+ALERT_PERIOD=5m
 ALERT_ENABLED=true
 
 while [[ $# > 0 ]]
@@ -106,7 +106,7 @@ curl -s -X POST \
   {
     \"description\": \"${ALERT_DESCRIPTION}\",
     \"enabled\": ${ALERT_ENABLED},
-    \"period\": \"${ALERT_PERIOD}m\",
+    \"period\": \"${ALERT_PERIOD}\",
     \"condition\": \"${ALERT_CONDITION}\",
     \"routing\": {
       \"pagerduty_service_api_key\": \"${PAGERDUTY_KEY}\"
